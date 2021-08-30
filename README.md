@@ -1,6 +1,6 @@
 # 拼拼WiFi / Wiwiz for OpenWrt
 
-# 简介
+## 简介
 拼拼WiFi / Wiwiz平台的OpenWrt固件插件。可以很方便的实现WiFi的网页认证、收费WiFi功能。
 
 ## 关于拼拼WiFi
