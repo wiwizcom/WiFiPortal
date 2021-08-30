@@ -1,11 +1,13 @@
 # 拼拼WiFi / Wiwiz for OpenWrt
 
+# 简介
+拼拼WiFi / Wiwiz平台的OpenWrt固件插件。可以很方便的实现WiFi的网页认证、收费WiFi功能。
+
 ## 关于拼拼WiFi
 拼拼WiFi是基于Wiwiz平台开发的专门用于实现收费WiFi的系统。
 [拼拼WiFi介绍](http://www.wiwiz.com/pinpinwifi/#docs)
 
 ## 安装到OpenWrt
-
 准备好OpenWrt的源码，假设源码目录名为OPENWRT_DIR。
 
 获取本项目代码，将eqos-master-wiwiz与wifidog-wiwiz目录拷贝至OpenWrt源码目录的package目录下。操作如下：
