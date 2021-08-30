@@ -42,3 +42,6 @@ make package/wifidog-wiwiz/compile V=s
 
 ## Bug报告
 EMail: support@wiwiz.com
+
+## 友情提醒
+编译凭耐心，刷机需经验，操作有风险，变砖莫悲伤！
