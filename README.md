@@ -7,9 +7,12 @@
 ## 安装到OpenWrt
 
 准备好OpenWrt的源码，假设源码目录名为OPENWRT_DIR。
-将eqos-master-wiwiz与wifidog-wiwiz目录拷贝至OpenWrt源码目录的package目录下。
+
+获取本项目代码，将eqos-master-wiwiz与wifidog-wiwiz目录拷贝至OpenWrt源码目录的package目录下。操作如下：
 
 ```
+git clone https://github.com/wiwizcom/WiFiPortal.git
+
 cp -r eqos-master-wiwiz OPENWRT_DIR/package/
 cp -r wifidog-wiwiz OPENWRT_DIR/package/
 
