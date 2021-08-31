@@ -33,8 +33,11 @@ make menuconfig
 2. Network ---> Captive Portals ---> wifidog-wiwiz
 
 以下项目也建议选择：
+
 3. LuCI ---> Collections  ---> luci
+
 4. LuCI ---> Modules ---> luci-compat
+
 
 编译应用包
 ```
