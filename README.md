@@ -29,7 +29,9 @@ make menuconfig
 ```
 
 选择以下项目（必选）：
+
 1. LuCI ---> Applications ---> luci-app-eqos
+
 2. Network ---> Captive Portals ---> wifidog-wiwiz
 
 以下项目也建议选择：
