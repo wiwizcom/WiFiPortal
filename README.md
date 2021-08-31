@@ -21,17 +21,27 @@ cp -r wifidog-wiwiz OPENWRT_DIR/package/
 cd OPENWRT_DIR
 ./scripts/feeds update -a
 ./scripts/feeds install -a
+```
 
+配置OpenWrt
+```
 make menuconfig
 ```
 
 选择以下项目：
 1. LuCI > Applications > luci-app-eqos
 2. Network > Captive Portals > wifidog-wiwiz
-	
+
+
+编译应用包
 ```
 make package/eqos/compile V=s
 make package/wifidog-wiwiz/compile V=s
+```
+
+如需编译整个固件，则执行：
+```
+make V=s
 ```
 
 ## 使用方法
