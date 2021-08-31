@@ -23,15 +23,18 @@ cd OPENWRT_DIR
 ./scripts/feeds install -a
 ```
 
-配置OpenWrt
+配置OpenWrt应用包
 ```
 make menuconfig
 ```
 
-选择以下项目：
-1. LuCI > Applications > luci-app-eqos
-2. Network > Captive Portals > wifidog-wiwiz
+选择以下项目（必选）：
+1. LuCI ---> Applications ---> luci-app-eqos
+2. Network ---> Captive Portals ---> wifidog-wiwiz
 
+以下项目也建议选择
+3. LuCI ---> Collections  ---> luci
+4. LuCI ---> Modules ---> luci-compat
 
 编译应用包
 ```
@@ -49,7 +52,6 @@ make V=s
 [拼拼WiFi平台注册/登录地址](http://www.wiwiz.com/pinpinwifi)
 2. 创建一个场所，记下场所的Hotspot ID。
 3. 进入OpenWrt的Web管理界面，进入Wiwiz菜单，填写Hotspot ID，勾选Enabled项，点击“保存并应用”。
-
 
 ## 功能限制与已知问题
 暂不支持远程设备管理(DCC)功能；
