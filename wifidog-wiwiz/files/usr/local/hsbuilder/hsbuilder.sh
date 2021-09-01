@@ -35,6 +35,8 @@ MY_FULLPATH="/usr/local/hsbuilder/hsbuilder.sh"
 MSG_FILE="/usr/local/hsbuilder/msgfile.htm"
 NORESOLVE="false"
 
+ENVINFO_SENT='0'
+
 doConfig() {
 	SURL="$1"
 	NR="$2"
@@ -259,7 +261,6 @@ do
 	touch $IPLIST.lasttime
 	echo "hsbuilder.sh: $(date)" >> $LOGFILE
 
-	#AS_HOSTNAME_X=$(getAsHostname "$AS_HOSTNAME")
 	AS_HOSTNAME_X=$AS_HOSTNAME
 	if [ "$AS_HOSTNAME_X" = "" ]; then
 		echo "Server is not reachable." >&2
@@ -267,27 +268,6 @@ do
 		#exit 4
 		continue
 	fi
-
-	##-- get lastest server address --
-	#wget -O - -T 10 "http://$AS_HOSTNAME_X/as/s/readconf/?m=srv&gw_id=$GW_ID" > $ADDRLIST 2>/dev/null
-	#if [ "`tail -n 1 $ADDRLIST`" = "$EOF_FLAG" ]; then
-	#    SRV=$(cat $ADDRLIST | grep -v "$EOF_FLAG")
-	#    
-	#    if [ "$SRV" != "" ]; then
-	#	    echo "$(cat $CONFPATH | grep -v AS_HOSTNAME)" > "$CONFPATH"
-	#	    echo "AS_HOSTNAME=$SRV" >> "$CONFPATH"
-	#	    
-	#	    if [ "$SRV" != "$AS_HOSTNAME" ]; then
-	#			AS_HOSTNAME_X=$(getAsHostname "$SRV")
-	#			if [ "$AS_HOSTNAME_X" = "" ]; then
-	#				echo "Server is not reachable." >&2
-	#				echo "Server is not reachable." >>$LOGFILE
-	#				#exit 4
-	#				continue
-	#			fi
-	#	    fi
-	#    fi
-	#fi
 
 	which nslookup 1>/dev/null 2>/dev/null
 	if [ $? != 0 ]; then
@@ -418,6 +398,11 @@ do
 	rm -f $TRUSTMAC 2>/dev/null
 	
 	/usr/local/hsbuilder/hsbuilder_helper.sh -os openwrt
+	
+	if [ "$ENVINFO_SENT" = "0" ]; then
+		curl -m 5 "http://$AS_HOSTNAME_X/as/s/readconf/?m=info&gw_id=$GW_ID&e2=$ENVINFO&ver=$MY_VERSION" 1>/dev/null 2>/dev/null
+		ENVINFO_SENT=1
+	fi
 	
 	sleep 30
 done
