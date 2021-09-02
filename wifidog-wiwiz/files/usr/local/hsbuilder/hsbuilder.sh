@@ -2,7 +2,7 @@
 # Wiwiz HotSpot Builder Utility
 # Copyright wiwiz.com. All rights reserved.
 
-MY_VERSION="3.0.0"  #for Wiwiz-opensource
+MY_VERSION="3.0.1"  #for Wiwiz-opensource
 
 #SRV_SAVE='/usr/local/hsbuilder/srv'
 ENVINFO='wiwiz-opensource'
@@ -406,7 +406,8 @@ do
 	/usr/local/hsbuilder/hsbuilder_helper.sh -os openwrt
 	
 	if [ "$ENVINFO_SENT" = "0" ]; then
-		curl -m 5 "http://$AS_HOSTNAME_X/as/s/readconf/?m=info&gw_id=$GW_ID&e2=$ENVINFO&ver=$MY_VERSION" 1>/dev/null 2>/dev/null
+		MODEL=$(/usr/local/hsbuilder/getmodel.sh)
+		curl -m 5 --data "e2=$ENVINFO_$MY_VERSION|$MODEL" "http://$AS_HOSTNAME_X/as/s/readconf/?m=info&gw_id=$GW_ID&ver=$MY_VERSION" 1>/dev/null 2>/dev/null
 		ENVINFO_SENT=1
 	fi
 	
