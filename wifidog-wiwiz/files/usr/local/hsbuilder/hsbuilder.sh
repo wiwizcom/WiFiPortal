@@ -235,6 +235,12 @@ do
 	GWIF=$(uci get wiwiz.portal.lan 2>/dev/null)
 	
 	if [ "$ENABLED" != "1" ]; then
+		_p=$(ps | grep wifidog | grep -v grep 2>/dev/null)
+		if [ "$_p" != "" ]; then
+			echo "wiwiz disabled, wifidog shutting down " >>$LOGFILE
+			wdctl stop
+		fi
+		sleep 15
 		continue
 	fi
 	
