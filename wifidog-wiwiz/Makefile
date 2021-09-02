@@ -53,6 +53,7 @@ define Package/wifidog-wiwiz/install
 	$(INSTALL_BIN) ./files/usr/local/hsbuilder/hsbuilder_helper.sh $(1)/usr/local/hsbuilder/hsbuilder_helper.sh
 	$(INSTALL_BIN) ./files/usr/local/hsbuilder/setspeed.sh $(1)/usr/local/hsbuilder/setspeed.sh
 	$(INSTALL_BIN) ./files/usr/local/hsbuilder/wiwizroaming.sh $(1)/usr/local/hsbuilder/wiwizroaming.sh
+	$(INSTALL_BIN) ./files/usr/local/hsbuilder/getmodel.sh $(1)/usr/local/hsbuilder/getmodel.sh
 	$(INSTALL_DATA) ./files/usr/local/hsbuilder/hsbuilder.conf $(1)/usr/local/hsbuilder/hsbuilder.conf
 
 	$(INSTALL_DIR) $(1)/usr/lib
