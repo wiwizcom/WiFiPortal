@@ -47,7 +47,7 @@ make menuconfig
 
 编译应用包
 ```
-make package/eqos/compile V=s
+make package/eqos-master-wiwiz/compile V=s
 make package/wifidog-wiwiz/compile V=s
 ```
 
