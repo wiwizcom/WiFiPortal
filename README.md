@@ -5,7 +5,7 @@
 
 [完整的固件编译教程](https://mp.weixin.qq.com/s/ibuAdO1-wwolK-DIv81z9w)
 
-已编译好的几百种设备的固件文件下载地址：http://www.wiwiz.com/pinpinwifi/#resource
+已编译好的数百种设备的固件文件：http://www.wiwiz.com/pinpinwifi/firmware.htm
 
 ## 关于拼拼WiFi
 拼拼WiFi是基于Wiwiz平台开发的专门用于实现收费WiFi的系统。
@@ -71,3 +71,7 @@ EMail: support@wiwiz.com
 
 ## 友情提醒
 编译凭耐心，刷机需经验，操作有风险，变砖莫悲伤！
+
+## 更新日志
+2021-09-09：首次发布
+2022-02-28：功能改进 - 重启后已认证用户可以无感免认证
