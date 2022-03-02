@@ -18,6 +18,8 @@
 
 ```
 git clone https://github.com/wiwizcom/WiFiPortal.git
+#如访问不了github请使用gitee
+#git clone https://github.com/wiwizcom/WiFiPortal.git
 
 cp -r eqos-master-wiwiz OPENWRT_DIR/package/
 cp -r wifidog-wiwiz OPENWRT_DIR/package/
