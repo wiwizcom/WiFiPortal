@@ -5,6 +5,8 @@
 
 已编译好的数百种设备的固件文件：http://www.wiwiz.com/pinpinwifi/firmware.htm
 
+[完整的编译步骤讲解](https://mp.weixin.qq.com/s/xwuZ1DHbjer41deNqkGV8g)
+
 ## 关于拼拼WiFi
 拼拼WiFi是基于Wiwiz平台开发的专门用于实现收费WiFi的系统。
 [拼拼WiFi介绍](http://www.wiwiz.com/pinpinwifi/#docs)
