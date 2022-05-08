@@ -37,18 +37,14 @@ make menuconfig
 选择以下项目（必选）：
 
 1. Wiwiz/PinPinWiFi  --->  Portal  ---> luci-app-eqos
-
 2. Wiwiz/PinPinWiFi  --->  Portal  ---> wifidog-wiwiz
-
 3. Wiwiz/PinPinWiFi  --->  Utilities  ---> dcc2-wiwiz-nossl
-
 4. LuCI ---> Collections  ---> luci-ssl-openssl
 
 
 以下项目也建议选择：
 
 1. LuCI ---> Collections  ---> luci
-
 2. LuCI ---> Modules ---> luci-compat
 
 
@@ -76,9 +72,9 @@ make V=s
 3. 进入OpenWrt的Web管理界面，进入 Wiwiz -> DCC2 菜单，填写用户TOken，勾选“启用”项，点击“保存并应用”。
 
 ## 功能限制与已知问题
-暂不支持远程设备管理(DCC)功能（如需远程管控设备，请使用DCC2）；
-
-不支持Wiwiz平台的插播广告（网页内植入悬浮广告）功能。
+1. 暂不支持远程设备管理(DCC)功能（如需远程管控设备，请使用DCC2）；
+2. 不支持Wiwiz平台的插播广告（网页内植入悬浮广告）功能；
+3. 访问https网页加载认证页面时，浏览器会提示自签名安全证书警告。
 
 ## Bug报告
 EMail: support@wiwiz.com
