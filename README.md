@@ -17,9 +17,8 @@
 获取本项目代码，将dcc2-wiwiz、eqos-master-wiwiz与wifidog-wiwiz目录拷贝至OpenWrt源码目录的package目录下。操作如下：
 
 ```
-git clone https://github.com/wiwizcom/WiFiPortal.git
-#如访问不了github请使用gitee
-#git clone https://gitee.com/wiwiz/WiFiPortal.git
+git clone https://gitee.com/wiwiz/WiFiPortal.git
+#git clone https://github.com/wiwizcom/WiFiPortal.git
 
 cp -r dcc2-wiwiz OPENWRT_DIR/package/
 cp -r eqos-master-wiwiz OPENWRT_DIR/package/
@@ -43,12 +42,14 @@ make menuconfig
 
 3. Wiwiz/PinPinWiFi  --->  Utilities  ---> dcc2-wiwiz-nossl
 
+4. LuCI ---> Collections  ---> luci-ssl-openssl
+
 
 以下项目也建议选择：
 
-3. LuCI ---> Collections  ---> luci
+1. LuCI ---> Collections  ---> luci
 
-4. LuCI ---> Modules ---> luci-compat
+2. LuCI ---> Modules ---> luci-compat
 
 
 编译应用包
@@ -91,3 +92,5 @@ EMail: support@wiwiz.com
 2022-02-28：功能改进 - 重启后已认证用户可以无感免认证
 
 2022-04-10: 增加设备远程管理功能（DCC2）；一些功能优化
+
+2022-05-08: 增加了https跳转功能
