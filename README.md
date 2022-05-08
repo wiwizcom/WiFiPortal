@@ -17,8 +17,9 @@
 获取本项目代码，将dcc2-wiwiz、eqos-master-wiwiz与wifidog-wiwiz目录拷贝至OpenWrt源码目录的package目录下。操作如下：
 
 ```
-git clone https://gitee.com/wiwiz/WiFiPortal.git
-#git clone https://github.com/wiwizcom/WiFiPortal.git
+git clone https://github.com/wiwizcom/WiFiPortal.git
+#git clone https://gitee.com/wiwiz/WiFiPortal.git
+
 
 cp -r dcc2-wiwiz OPENWRT_DIR/package/
 cp -r eqos-master-wiwiz OPENWRT_DIR/package/
