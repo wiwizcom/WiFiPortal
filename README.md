@@ -20,7 +20,6 @@
 git clone https://github.com/wiwizcom/WiFiPortal.git
 #git clone https://gitee.com/wiwiz/WiFiPortal.git
 
-
 cp -r dcc2-wiwiz OPENWRT_DIR/package/
 cp -r eqos-master-wiwiz OPENWRT_DIR/package/
 cp -r wifidog-wiwiz OPENWRT_DIR/package/
@@ -61,7 +60,7 @@ make package/dcc2-wiwiz/compile V=s
 make V=s
 ```
 
-## Web认证/收费功能的设置方法
+## Web认证/收费功能的设置方法（绑定Hotspot ID）
 1. 注册拼拼WiFi平台账户：
 [拼拼WiFi平台注册/登录地址 http://www.wiwiz.com/pinpinwifi](http://www.wiwiz.com/pinpinwifi)
 2. 创建一个场所，记下场所的Hotspot ID。
@@ -70,7 +69,7 @@ make V=s
 ## 设备远程管理（DCC2）的设置方法
 1. 登录DCC2后台，网址是：http://cp.wiwiz.com/ppwf/dcc2
 2. 点击右上角账号，点击“显示Token”，并记下Token。
-3. 进入OpenWrt的Web管理界面，进入 Wiwiz -> DCC2 菜单，填写用户TOken，勾选“启用”项，点击“保存并应用”。
+3. 进入OpenWrt的Web管理界面，进入 Wiwiz -> DCC2 菜单，填写用户Token，勾选“启用”项，点击“保存并应用”。
 
 ## 功能限制与已知问题
 1. 暂不支持远程设备管理(DCC)功能（如需远程管控设备，请使用DCC2）；
@@ -82,6 +81,34 @@ EMail: support@wiwiz.com
 
 ## 友情提醒
 编译凭耐心，刷机需经验，操作有风险，变砖莫悲伤！
+
+## 疑难问题
+### 1. 用OpenWrt 22.03及以后的版本编译时，可能会遇到如下报错：
+```
+fw_iptables.o:(.bss+0x4): multiple definition of `icmp_fd'; conf.o:(.bss+0x1d0): first defined here
+firewall.o:(.bss+0x0): multiple definition of `icmp_fd'; conf.o:(.bss+0x1d0): first defined here
+gateway.o:(.bss+0x54): multiple definition of `icmp_fd'; conf.o:(.bss+0x1d0): first defined here
+centralserver.o:(.bss+0x0): multiple definition of `icmp_fd'; conf.o:(.bss+0x1d0): first defined here
+http.o:(.bss+0x0): multiple definition of `icmp_fd'; conf.o:(.bss+0x1d0): first defined here
+auth.o:(.bss+0x0): multiple definition of `icmp_fd'; conf.o:(.bss+0x1d0): first defined here
+client_list.o:(.bss+0x0): multiple definition of `firstclient'; gateway.o:(.bss+0x48): first defined here
+wdctl_thread.o:(.bss+0x0): multiple definition of `wdctl_socket_server'; gateway.o:(.bss+0x50): first defined here
+wdctl_thread.o:(.bss+0x4): multiple definition of `icmp_fd'; conf.o:(.bss+0x1d0): first defined here
+```
+解决方法：
+make menuconfig之后，启用Advanced configuration options (for developers)，选中Toolchain Options，选择GCC compiler Version，然后选择gcc 8.x
+
+### 2. 手机或电脑连接后不显示认证页面，而是可以正常上网
+确认外网的网线是否接的是WAN口（不可以是LAN口）。
+
+确认是否绑定了Hotspot ID。
+
+如果用的是OpenWrt 22.03及以后的版本编译的，那么make menuconfig之后检查这几项是否勾选了：
+1. Network  --->  Firewall  --->  iptables-legacy
+2. Network  --->  Firewall  --->  iptables-mod-conntrack-extra
+3. Network  --->  Firewall  --->  iptables-mod-iface
+4. Network  --->  Firewall  --->  iptables-mod-ipmark
+6. Network  --->  Firewall  --->  ip6tables-legacy
 
 ## 更新日志
 2021-09-09：首次发布
