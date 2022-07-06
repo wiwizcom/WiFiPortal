@@ -118,3 +118,6 @@ make menuconfig之后，启用Advanced configuration options (for developers)，
 2022-04-10: 增加设备远程管理功能（DCC2）；一些功能优化
 
 2022-05-08: 增加了https跳转功能
+
+2022-07-06: 修复已知问题
+
