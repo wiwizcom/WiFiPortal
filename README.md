@@ -121,3 +121,4 @@ make menuconfig之后，启用Advanced configuration options (for developers)，
 
 2022-07-06: 修复已知问题
 
+2022-08-16: 修复已知问题，提高稳定性
