@@ -126,3 +126,6 @@ make menuconfig之后，启用Advanced configuration options (for developers)，
 2022-08-28: 修复已知问题，提高稳定性
 
 2022-08-31: Bug修复；增加调试日志输出能力
+
+2022-09-09: Bug修复
+
