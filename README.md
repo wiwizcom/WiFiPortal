@@ -129,3 +129,4 @@ make menuconfig之后，启用Advanced configuration options (for developers)，
 
 2022-09-09: Bug修复
 
+2022-10-22: 修复已知问题
