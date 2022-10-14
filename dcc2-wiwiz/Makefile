@@ -67,6 +67,28 @@ define Package/dcc2-wiwiz-$(BUILD_VARIANT)/install
 	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/model/cbi
 	$(INSTALL_DATA) ./files/usr/lib/lua/luci/controller/rtty.lua $(1)/usr/lib/lua/luci/controller/rtty.lua
 	$(INSTALL_DATA) ./files/usr/lib/lua/luci/model/cbi/rtty.lua $(1)/usr/lib/lua/luci/model/cbi/rtty.lua
+
+	$(INSTALL_DIR) $(1)/etc/uci-defaults
+	$(INSTALL_BIN) ./files/uci-defaults-rtty $(1)/etc/uci-defaults/rtty
+endef
+
+define Package/dcc2-wiwiz-$(BUILD_VARIANT)/postinst
+#!/bin/sh
+which uci > /dev/null || exit 0
+uci -q get ucitrack.@rtty[0] > /dev/null || {
+  uci add ucitrack rtty > /dev/null
+  uci set ucitrack.@rtty[0].init=rtty
+  uci commit
+}
+endef
+
+define Package/dcc2-wiwiz-$(BUILD_VARIANT)/postrm
+#!/bin/sh
+which uci > /dev/null || exit 0
+uci -q get ucitrack.@rtty[0] > /dev/null && {
+  uci delete ucitrack.@rtty[0]
+  uci commit
+}
 endef
 
 $(eval $(call BuildPackage,dcc2-wiwiz-openssl))
