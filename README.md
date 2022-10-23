@@ -134,3 +134,5 @@ make menuconfig之后，启用Advanced configuration options (for developers)，
 2022-10-14: 修复部分设备DCC2设置后不能实时生效的问题
 
 2022-10-21: 认证漫游优化 
+
+2022-10-23: 修复已知问题
