@@ -136,3 +136,5 @@ make menuconfig之后，启用Advanced configuration options (for developers)，
 2022-10-21: 认证漫游优化 
 
 2022-10-23: 修复已知问题
+
+2022-10-25：新增免认证网络配置
