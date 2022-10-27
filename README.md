@@ -138,3 +138,5 @@ make menuconfig之后，启用Advanced configuration options (for developers)，
 2022-10-23: 修复已知问题
 
 2022-10-25：新增免认证网络配置
+
+2022-10-27: 进行了一些优化：绑定时省略用户名，显示版本号等
