@@ -144,3 +144,5 @@ make menuconfig之后，启用Advanced configuration options (for developers)，
 2022-10-30: 解决多WAN冲突问题
 
 2022-12-10: 过滤Hotspot ID前后的空格
+
+2023-08-15: 设置页面内增加了使用说明
