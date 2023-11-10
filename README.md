@@ -83,22 +83,7 @@ EMail: support@wiwiz.com
 编译凭耐心，刷机需经验，操作有风险，变砖莫悲伤！
 
 ## 疑难问题
-### 1. 用OpenWrt 22.03及以后的版本编译时，可能会遇到如下报错：
-```
-fw_iptables.o:(.bss+0x4): multiple definition of `icmp_fd'; conf.o:(.bss+0x1d0): first defined here
-firewall.o:(.bss+0x0): multiple definition of `icmp_fd'; conf.o:(.bss+0x1d0): first defined here
-gateway.o:(.bss+0x54): multiple definition of `icmp_fd'; conf.o:(.bss+0x1d0): first defined here
-centralserver.o:(.bss+0x0): multiple definition of `icmp_fd'; conf.o:(.bss+0x1d0): first defined here
-http.o:(.bss+0x0): multiple definition of `icmp_fd'; conf.o:(.bss+0x1d0): first defined here
-auth.o:(.bss+0x0): multiple definition of `icmp_fd'; conf.o:(.bss+0x1d0): first defined here
-client_list.o:(.bss+0x0): multiple definition of `firstclient'; gateway.o:(.bss+0x48): first defined here
-wdctl_thread.o:(.bss+0x0): multiple definition of `wdctl_socket_server'; gateway.o:(.bss+0x50): first defined here
-wdctl_thread.o:(.bss+0x4): multiple definition of `icmp_fd'; conf.o:(.bss+0x1d0): first defined here
-```
-解决方法：
-make menuconfig之后，启用Advanced configuration options (for developers)，选中Toolchain Options，选择GCC compiler Version，然后选择gcc 8.x
-
-### 2. 手机或电脑连接后不显示认证页面，而是可以正常上网
+### 1. 手机或电脑连接后不显示认证页面，而是可以正常上网
 确认外网的网线是否接的是WAN口（不可以是LAN口）。
 
 确认是否绑定了Hotspot ID。
@@ -146,3 +131,5 @@ make menuconfig之后，启用Advanced configuration options (for developers)，
 2022-12-10: 过滤Hotspot ID前后的空格
 
 2023-08-15: 设置页面内增加了使用说明
+
+2023-11-10: 适配OpenWrt 23.05；修复“multiple definition of XXX...”的问题
