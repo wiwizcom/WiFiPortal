@@ -133,3 +133,5 @@ EMail: support@wiwiz.com
 2023-08-15: 设置页面内增加了使用说明
 
 2023-11-10: 适配OpenWrt 23.05；修复“multiple definition of XXX...”的问题
+
+2024-01-09: 修复防火墙规则清空后Portal失效的问题
