@@ -53,6 +53,7 @@ make menuconfig
 make package/eqos-master-wiwiz/compile V=s
 make package/wifidog-wiwiz/compile V=s
 make package/dcc2-wiwiz/compile V=s
+make package/autokick-wiwiz/compile V=s
 ```
 
 如需编译整个固件，则执行：
@@ -135,3 +136,5 @@ EMail: support@wiwiz.com
 2023-11-10: 适配OpenWrt 23.05；修复“multiple definition of XXX...”的问题
 
 2024-01-09: 修复防火墙规则清空后Portal失效的问题
+
+2024-06-13: 增加Portal认证到期后自动断开无线用户功能（autokick-wiwiz）
