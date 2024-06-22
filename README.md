@@ -138,3 +138,5 @@ EMail: support@wiwiz.com
 2024-01-09: 修复防火墙规则清空后Portal失效的问题
 
 2024-06-13: 增加Portal认证到期后自动断开无线用户功能（autokick-wiwiz）
+
+2024-06-22: Portal可指定网络接口；增加NoPortal功能支持
