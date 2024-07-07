@@ -142,3 +142,5 @@ EMail: support@wiwiz.com
 2024-06-22: Portal可指定网络接口；增加NoPortal功能支持
 
 2024-06-26: Bug fix
+
+2024-07-08: 认证漫游逻辑替换
