@@ -144,3 +144,6 @@ EMail: support@wiwiz.com
 2024-06-26: Bug fix
 
 2024-07-08: 认证漫游逻辑替换
+
+2024-09-27: 增加记录Portal认证设备MAC地址能力
+
