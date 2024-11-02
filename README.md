@@ -147,3 +147,4 @@ EMail: support@wiwiz.com
 
 2024-09-27: 增加记录Portal认证设备MAC地址能力
 
+2024-11-03: DCC2增加状态信息上报功能
