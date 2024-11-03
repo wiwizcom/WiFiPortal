@@ -1,7 +1,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=autokick-wiwiz
-PKG_VERSION:=1.1.1
+PKG_VERSION:=20241103
 PKG_RELEASE:=1
 LUCI_DIR:=/usr/lib/lua/luci
 
