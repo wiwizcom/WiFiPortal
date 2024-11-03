@@ -1,7 +1,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=dcc2-wiwiz
-PKG_VERSION:=8.2.1
+PKG_VERSION:=1.2.1
 PKG_RELEASE:=1
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(BUILD_VARIANT)/$(PKG_NAME)-$(PKG_VERSION)
@@ -29,7 +29,7 @@ Package/dcc2-wiwiz-mbedtls=$(call Package/dcc2-wiwiz/Default,mbedtls,+PACKAGE_dc
 Package/dcc2-wiwiz-nossl=$(call Package/dcc2-wiwiz/Default,nossl)
 
 define Package/dcc2-wiwiz-openssl/conffiles
-/etc/config/dcc2-wiwiz
+/etc/config/rtty
 endef
 
 Package/dcc2-wiwiz-wolfssl/conffiles = $(Package/dcc2-wiwiz-openssl/conffiles)
