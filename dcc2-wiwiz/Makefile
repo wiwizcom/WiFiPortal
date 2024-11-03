@@ -60,8 +60,8 @@ define Package/dcc2-wiwiz-$(BUILD_VARIANT)/install
 	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/model/cbi
 	$(INSTALL_DATA) ./files/usr/lib/lua/luci/controller/rtty.lua $(1)/usr/lib/lua/luci/controller/rtty.lua
 	$(INSTALL_DATA) ./files/usr/lib/lua/luci/model/cbi/rtty.lua $(1)/usr/lib/lua/luci/model/cbi/rtty.lua
-  $(INSTALL_BIN) ./files/www/cgi-bin/dvstatus $(1)/www/cgi-bin/dvstatus
-  $(INSTALL_BIN) ./files/usr/bin/assocnum.sh $(1)/usr/bin/assocnum.sh
+	$(INSTALL_BIN) ./files/www/cgi-bin/dvstatus $(1)/www/cgi-bin/dvstatus
+	$(INSTALL_BIN) ./files/usr/bin/assocnum.sh $(1)/usr/bin/assocnum.sh
 
 	$(INSTALL_DIR) $(1)/etc/uci-defaults
 	$(INSTALL_BIN) ./files/uci-defaults-rtty $(1)/etc/uci-defaults/rtty
