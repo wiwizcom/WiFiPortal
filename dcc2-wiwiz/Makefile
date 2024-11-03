@@ -47,7 +47,7 @@ else
 endif
 
 define Package/dcc2-wiwiz-$(BUILD_VARIANT)/install
-	$(INSTALL_DIR) $(1)/usr/sbin $(1)/etc/init.d $(1)/etc/config
+	$(INSTALL_DIR) $(1)/usr/sbin $(1)/etc/init.d $(1)/etc/config $(1)/www/cgi-bin $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/rtty $(1)/usr/sbin
 	$(INSTALL_BIN) ./files/rtty.init $(1)/etc/init.d/rtty
 	$(INSTALL_CONF) ./files/rtty.config $(1)/etc/config/rtty
