@@ -46,7 +46,8 @@ make menuconfig
 
 1. LuCI ---> Collections  ---> luci
 2. LuCI ---> Modules ---> luci-compat
-
+3. Wiwiz/PinPinWiFi  --->  Portal  ---> autokick-wiwiz
+4. Wiwiz/PinPinWiFi  --->  Portal  ---> Add NoPortal network and firewall configuration
 
 编译应用包
 ```
@@ -164,3 +165,5 @@ EMail: support@wiwiz.com
 2025-06-17: 支持DHCP Captive Portal通告功能；修复已知问题
 
 2025-09-09: 修复已知问题；优化日志
+
+2025-10-15: 修复已知问题；优化编译选项
